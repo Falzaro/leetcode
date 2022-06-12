@@ -3,16 +3,22 @@ class ListNode:
         self.val = val
         self.next = next
     
-def addNodes(nums):
-    cur = head = ListNode(nums[0])
-    for num in nums[1:]:
-        cur.next = ListNode(num)
-        cur = cur.next
+def initialize_list(nums):
+    head = None
+    for num in nums:
+        newNode = ListNode(num)
+        if head == None:
+            head = newNode
+        else:
+            cur = head
+            while cur.next:
+                cur = cur.next
+            cur.next = newNode
     return head
 
 def outputNodes(head):
     if head == None:
         return
-    print(head.val)
+    print(head.val, end=" ")
     return outputNodes(head.next)
     

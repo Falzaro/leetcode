@@ -11,7 +11,7 @@ Example 3:
 Input: head = []
 Output: []
 """
-from linked_list import addNodes, outputNodes
+from linked_list import initialize_list, outputNodes
 
 def reverseList(head):
     cur = head 
@@ -23,8 +23,8 @@ def reverseList(head):
         cur = next
     return prev
 
-head = addNodes([1, 2, 3, 4, 5])
+head = initialize_list([1, 2, 3, 4, 5])
 outputNodes(head)
-print("---------")
-head = reverseList(head)
-outputNodes(head)
+# print("---------")
+# head = reverseList(head)
+# outputNodes(head)
