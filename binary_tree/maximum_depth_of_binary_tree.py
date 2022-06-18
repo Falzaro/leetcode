@@ -16,7 +16,7 @@ root.right = TreeNode(2)
 def maxDepth(root):
     if not root:
         return 0
-    return max(maxDepth(root.left) + 1, maxDepth(root.right) + 1)
+    return max(maxDepth(root.left), maxDepth(root.right)) + 1
 
 
 result = maxDepth(root)

@@ -26,8 +26,8 @@ def levelOrderArrays(root):
     print(result)
 
 def levelOrderArraysNums(root):
-    if not root: return []
     result = []
+    if not root: return result
     curLevel = [root]
     while len(curLevel) != 0:
         newLevel = []
