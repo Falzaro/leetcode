@@ -26,7 +26,7 @@ def search_r(nums, low, high, target):
     mid = (high - low) // 2 + low
     if low > high:
         return -1
-    elif nums[mid] == target:
+    elif target == nums[mid]:
         return mid
     elif target > nums[mid]:
         return search_r(nums, mid + 1, high, target)
