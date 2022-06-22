@@ -34,6 +34,5 @@ def search_r(nums, low, high, target):
         return search_r(nums, low, mid - 1, target)
 
 # search([-1, 0, 3, 5, 9, 12], 13)
-nums = [-1, 0, 3, 5, 9, 12]
-result = search_r(nums, 0, len(nums) - 1, 3)
-print(result)
+# nums = [-1, 0, 3, 5, 9, 12]
+# result = search_r(nums, 0, len(nums) - 1, 3)

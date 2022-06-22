@@ -20,5 +20,5 @@ def outputNodes(head):
     if head == None:
         return
     print(head.val, end=" ")
-    return outputNodes(head.next)
+    outputNodes(head.next)
     
