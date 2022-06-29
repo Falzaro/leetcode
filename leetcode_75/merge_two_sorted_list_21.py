@@ -37,7 +37,4 @@ def mergeTwoLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optio
 
 head1 = initialize_list([1, 2, 4])
 head2 = initialize_list([1, 3, 4])
-outputNodes(head1)
-print()
-outputNodes(head2)
 # head = mergeTwoLists(head1, head2)
