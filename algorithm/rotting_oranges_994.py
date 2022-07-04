@@ -18,6 +18,7 @@ def fourDirections(grid: List[List[int]], i: int, j: int, q) -> int:
     if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[i]) or grid[i][j] == 0 or grid[i][j] == 2:
         return 0
     q.append([i, j])
+    grid[i][j] = 2
     return 1
 
 def orangesRotting(grid: List[List[int]]) -> int:
@@ -41,8 +42,12 @@ def orangesRotting(grid: List[List[int]]) -> int:
             rottenCount += fourDirections(grid, i - 1, j, q) # down
             rottenCount += fourDirections(grid, i, j + 1, q) # left
             rottenCount += fourDirections(grid, i, j - 1, q) # right 
-        minute += 1
-    print(minute)
+        if len(q):
+            minute += 1
+    return minute if rottenCount is orangeCount else -1
 
 
-orangesRotting([[2,1,1],[1,1,0],[0,1,1]])
+print(orangesRotting([[2,1,1],[1,1,0],[0,1,1]]))
+print(orangesRotting([[0,2]]))
+print(orangesRotting([[2,1,1],[0,1,1],[1,0,1]]))
+print(orangesRotting([[0]]))
