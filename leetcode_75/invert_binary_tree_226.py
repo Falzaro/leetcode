@@ -12,6 +12,9 @@ Input: root = []
 Output: []
 """
 
+import sys
+sys.path.append(".")
+from binary_tree.bfs_traversal import bfs
 class Node:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -19,7 +22,15 @@ class Node:
         self.right = right
 
 def invertTree(root: Node) -> Node:
-    pass
+    if not root:
+        return root
+    invertTree(root.left)
+    invertTree(root.right)
+    root.left, root.right = root.right, root.left
+    return root
 
-root = Node(4, Node(2, Node(1), Node(2)), Node(7, Node(6), Node(9)))
-invertTree(root)
+root = Node(4, Node(2, Node(1), Node(3)), Node(7, Node(6), Node(9)))
+root = Node(2, Node(1), Node(3))
+root = Node(4, Node(2, Node(1)), Node(7, None, Node(9)))
+root = invertTree(root)
+print(bfs(root))

@@ -59,6 +59,12 @@ def connect(root: Node) -> Node:
 
 # root = Node(1, Node(2, Node(4), Node(5)), Node(3, Node(6), Node(7)))
 root = Node(1, Node(2, Node(4), Node(5)), Node(3, Node(6), Node(7)))
+
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(2)
+root.left.left = Node(2)
 root = Node(0)
 root = connect(root)
 print(root.val)
