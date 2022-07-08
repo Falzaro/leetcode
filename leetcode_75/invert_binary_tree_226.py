@@ -30,7 +30,7 @@ def invertTree(root: Node) -> Node:
     return root
 
 root = Node(4, Node(2, Node(1), Node(3)), Node(7, Node(6), Node(9)))
-root = Node(2, Node(1), Node(3))
-root = Node(4, Node(2, Node(1)), Node(7, None, Node(9)))
+# root = Node(2, Node(1), Node(3))
+# root = Node(4, Node(2, Node(1)), Node(7, None, Node(9)))
 root = invertTree(root)
 print(bfs(root))

@@ -1,3 +1,4 @@
+""" Tail recursion approach"""
 def maxNum(arr):
     return arr[0] if len(arr) == 1 else max(arr.pop(), maxNum(arr))
 

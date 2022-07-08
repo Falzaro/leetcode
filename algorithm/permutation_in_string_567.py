@@ -17,7 +17,6 @@ Input: s1 = "adc", s2 = "dcda"
 Output: true
 """
 
-from collections import Counter
 
 def checkInclusion(s1: str, s2: str) -> bool:
     if len(s1) > len(s2):
@@ -40,10 +39,9 @@ def checkInclusion(s1: str, s2: str) -> bool:
 
     
     
-
 # print(checkInclusion("ab", "eidbaooo"))
 # print(checkInclusion("ab", "eidboaoo"))
-print(checkInclusion("adc", "dcda"))
+# print(checkInclusion("adc", "dcda"))
 # print(checkInclusion("adc", "dbcad"))
 # print(checkInclusion("hello", "ooolleooholeh"))
 # print(checkInclusion("cab", "dbabcd"))

@@ -15,24 +15,10 @@ The height of the n-ary tree is less than or equal to 1000.
 """
 
 from typing import List
-
 class Node:
-    def __init__(self, val=None, children=None):
+    def __init__(self, val=None, children=[]):
         self.val = val
         self.children = children
-
-# def dfs(root, res):
-#     res.append(root.val)
-#     if not root.children:
-#         return res
-#     for node in root.children:
-#         dfs(node, res)
-#     return res
-
-# def preorder(root: 'Node') -> List[int]:
-#     if not root:
-#         return None
-#     return dfs(root, [])
 
 def preorder(root: 'Node') -> List[int]:
     if not root: return []
