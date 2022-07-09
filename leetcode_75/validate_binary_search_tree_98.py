@@ -10,6 +10,7 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 
 notes
 - Didn't know that we can use negative/positive infinity
+- I like that you can return two recursive calls using the "and" operator
 """
 import sys
 sys.path.append(".")
