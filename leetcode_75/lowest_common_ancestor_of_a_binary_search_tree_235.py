@@ -23,25 +23,16 @@ class Node:
         self.left = left
         self.right = right
 
-def findAncestor(root, d, ancestor):
-    if not root: return None
-    if root.val in d:
-        if len(d) == 1:
-            return ancestor
-        ancestor = root
-        d.remove(root.val)
-    ancestor = findAncestor(root.left, d, ancestor)
-    ancestor = findAncestor(root.right, d, ancestor)
-    if ancestor: return ancestor
-    if root.left in d or root.right in d:
-        return root
-
 def lowestCommonAncestor(root: 'Node', p: 'Node', q: 'Node') -> 'Node':
-    return findAncestor(root, set([p.val, q.val]), None)
+    if root.val > p.val and root.val > q.val:
+        return lowestCommonAncestor(root.left, p, q)
+    if root.val < p.val and root.val < q.val:
+        return lowestCommonAncestor(root.right, p, q)
+    return root
 
 
 root = Node(6, Node(2, Node(0), Node(4, Node(3), Node(5))), Node(8, Node(7), Node(9)))
-print(lowestCommonAncestor(root, Node(2), Node(8)).val)
+print(lowestCommonAncestor(root, Node(3), Node(5)).val)
 
 # root = Node(6, Node(2, Node(0), Node(4, Node(3), Node(5))), Node(8, Node(7), Node(9)))
 # print(lowestCommonAncestor(root, Node(2), Node(4)).val)
